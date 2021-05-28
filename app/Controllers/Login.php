@@ -17,13 +17,13 @@ class Login extends ResourceController
 
     public function index()
     {
+        if(!Auth::$IS_LOGIN){
+            return $this->fail('Access denied', 401,'TYU7890');
+        }
+
         $model = new LoginModal();
-
-        $data = [
-            'news'  => $model->getData(),
-            'title' => 'News archive',
-        ];
-
+        $data = $model->myDetail(Auth::$USER_ID);
+        return $this->respond($data, 200);
         return $data;
     }
 

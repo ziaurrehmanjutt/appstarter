@@ -14,7 +14,7 @@ class UsersModal extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['user_name', 'user_email','user_type','user_passowrd','user_token'];
+    protected $allowedFields = ['user_name', 'user_email','user_type','user_passowrd','user_token','user_address','user_address','user_note','user_image'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

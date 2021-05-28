@@ -49,6 +49,7 @@ $routes->get('/', 'Home::index');
  */
 $routes->resource('login');
 $routes->resource('users');
+$routes->get('fusers/(:segment)','Users::filter/$1');
 $routes->resource('services');
 // $routes->presenter('login');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
