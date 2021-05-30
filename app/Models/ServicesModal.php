@@ -25,8 +25,7 @@ class ServicesModal extends Model
     // protected $skipValidation     = false;
 
     protected $validationRules    = [
-        'service_name'     => 'required|alpha_numeric_space|min_length[3]',
-        'service_image'        => 'required'
+        'service_name'     => 'required|alpha_numeric_space|min_length[3]'
     ];
 
     protected $validationMessages = [

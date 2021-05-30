@@ -124,6 +124,13 @@ class Services extends ResourceController
         }
         
         $service = $serviceModel->update($id, $data);
-        return $this->respond($service, 200);
+
+        if ($service === false) {
+            return $this->fail($serviceModel->errors(), 400);
+        }else{
+            return $this->respond($service, 200);
+
+        }
+       
     }
 }
