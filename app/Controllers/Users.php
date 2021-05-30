@@ -34,7 +34,7 @@ class Users extends ResourceController
         $userModel = new UsersModal();
 
         $post = file_get_contents("php://input");
-        $POST  =json_decode($post, true);
+        $POST  = json_decode($post, true);
         $POST = $POST  ? $POST : $_POST;
         $data['user_name'] = isset($POST['user_name']) ? $POST['user_name'] : '';
         $data['user_email'] = isset($POST['user_email']) ? $POST['user_email'] : '';
@@ -71,7 +71,6 @@ class Users extends ResourceController
             return $this->fail($userModel->errors(), 400);
         }else{
             return $this->respondCreated($user);
-
         }
     }
     public function show($id = NULL )

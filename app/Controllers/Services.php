@@ -41,7 +41,8 @@ class Services extends ResourceController
         $data['service_name'] = isset($POST['service_name']) ? $POST['service_name'] : '';
         $data['service_descriptions'] = isset($POST['service_descriptions']) ? $POST['service_descriptions'] : '';
         $data['service_image'] = isset($POST['service_image']) ? $POST['service_image'] : '';
-
+        $data['service_seller']  = Auth::$USER_ID;
+        
         if (!$data['service_image']) {
             return $this->fail("Image Required", 400);
         }

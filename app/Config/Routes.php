@@ -49,9 +49,16 @@ $routes->get('/', 'Home::index');
  */
 $routes->resource('login');
 $routes->resource('users');
-$routes->get('fusers/(:segment)','Users::filter/$1');
+$routes->resource('products');
 $routes->resource('services');
-// $routes->presenter('login');
+$routes->resource('stores');
+$routes->resource('cities');
+$routes->resource('zones');
+$routes->get('fusers/(:segment)','Users::filter/$1');
+$routes->get('fproducts/(:segment)','Products::filter/$1');
+$routes->post('admin_register','Login::register_admin');
+
+// $routes->presenter('login'); 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

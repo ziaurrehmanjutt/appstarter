@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ServicesModal extends Model
+class StoresModal extends Model
 {
-    protected $table = 'all_services';
+    protected $table = 'all_stores';
     protected $primaryKey = 'rowid';
 
     protected $useAutoIncrement = true;
@@ -14,7 +14,7 @@ class ServicesModal extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['service_name', 'service_descriptions','service_image','service_seller'];
+    protected $allowedFields = ['store_name', 'store_description', 'store_address', 'store_city', 'store_zone', 'stor_lat', 'store_lng', 'store_status', 'store_admin','store_image','store_banner'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
@@ -25,14 +25,13 @@ class ServicesModal extends Model
     // protected $skipValidation     = false;
 
     protected $validationRules    = [
-        'service_name'     => 'required|alpha_numeric_space|min_length[3]',
-        'service_image'        => 'required'
+        'store_name'     => 'required|alpha_numeric_space|min_length[3]'
     ];
 
     protected $validationMessages = [
-        'service_name'        => [
-            'required' => 'Service Name is Required',
-            'min_length' => 'Service name is Not So Good'
+        'store_name'        => [
+            'required' => 'Store Name is Required',
+            'min_length' => 'Store name is Not So Good'
         ]
     ];
 }
