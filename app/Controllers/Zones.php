@@ -22,6 +22,11 @@ class Zones extends ResourceController
             return $this->fail('Access denied', 401,'TYU7890');
         }
         $zoneModal = new ZonesModal();
+        if(isset($_GET) && isset($_GET['city'])){
+            $zone = $zoneModal->where('zone_city', $_GET['city'])->findAll();
+            return $this->respond($zone, 200);
+        }
+      
         $zone = $zoneModal->findAll();
         return $this->respond($zone, 200);
     }
