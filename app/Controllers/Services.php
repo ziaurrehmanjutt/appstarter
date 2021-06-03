@@ -104,7 +104,9 @@ class Services extends ResourceController
         ///Getting Post Data
         $post = file_get_contents("php://input");
         $POST  =json_decode($post, true);
-        $POST = $POST  ? $POST : $_POST;
+        // $POST = $POST  ? $POST : $_POST;
+        // return $this->fail($post, 400);
+        // return $this->respond($POST, 200);
         $data['service_name'] = isset($POST['service_name']) ? $POST['service_name'] : '';
         $data['service_descriptions'] = isset($POST['service_descriptions']) ? $POST['service_descriptions'] : '';
         $imageData = isset($POST['service_image']) ? $POST['service_image'] : '';
